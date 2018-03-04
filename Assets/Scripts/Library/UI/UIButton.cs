@@ -6,9 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
 /// <summary>
-/// User interface button.
-/// 
-/// if you want do anything when you click this button, SUBSCRIBE THIS!
+/// Button 클래스
 /// </summary>
 public class UIButton : UIObject, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
 {
@@ -89,6 +87,10 @@ public class UIButton : UIObject, IPointerDownHandler, IPointerUpHandler, IPoint
         JTween.ScaleTo(this.gameObject, _localScale, GetTransitionTime(), 0, _buttonStyle);
     }
 
+    /// <summary>
+    /// 버튼을 눌렀을 때 나오는 애니메이션을 구하는 시간
+    /// </summary>
+    /// <returns></returns>
 	public float GetTransitionTime()
 	{
 		return _transitionTime;
@@ -112,6 +114,10 @@ public class UIButton : UIObject, IPointerDownHandler, IPointerUpHandler, IPoint
 		}
     }
 
+    /// <summary>
+    /// 버튼을 클릭했을 때, 추가적인 작업을 추가한다.
+    /// </summary>
+    /// <param name="action"></param>
 	public void SubscribeButton(System.Action<GameObject> action)
 	{
 		if(action == null)
@@ -122,6 +128,10 @@ public class UIButton : UIObject, IPointerDownHandler, IPointerUpHandler, IPoint
 		_onButtonClickAction += action;
 	}
 
+    /// <summary>
+    /// SubScribe 했던 함수를 제외시킨다.
+    /// </summary>
+    /// <param name="action"></param>
 	public void UnSubscribeButton(System.Action<GameObject> action)
 	{
 		if(action == null)
