@@ -25,47 +25,55 @@ public class UIScrollView : MonoBehaviour
 		_rectTransform = this.GetComponent<RectTransform> ();
 	}
 
-	public void Start()
-	{
-		if (_prefab == null) 
-		{
-			JDebugger.Log (this, "UI Scroll View : Prefab is not allocated by user");
-			return;
-		}
+    public void Start()
+    {
+        Init();
+    }
 
-		GridLayoutGroup grid = _grid.GetComponent<GridLayoutGroup> ();
-		grid.cellSize = _prefab.GetComponent<RectTransform> ().sizeDelta;
+    public void Init()
+    {
+        if (_prefab == null)
+        {
+            JDebugger.Log(this, "UI Scroll View : Prefab is not allocated by user");
+            return;
+        }
 
-		// scrollRect -> horizontal ? grid -> vertical
-		// scrollRect -> vertical ? grid -> horizontal
-		if(_scrollRect.horizontal)
-		{
-			grid.startAxis = GridLayoutGroup.Axis.Vertical;
-		}
-		else
-		{
-			grid.startAxis = GridLayoutGroup.Axis.Horizontal;
-		}
+        GridLayoutGroup grid = _grid.GetComponent<GridLayoutGroup>();
+        grid.cellSize = _prefab.GetComponent<RectTransform>().sizeDelta;
 
-		Vector2 contentSize = _rectTransform.sizeDelta;
-		contentSize.y -= _scrollBarHorizontalTransform.sizeDelta.y;
-		contentSize.x -= _scrollBarVerticalTransform.sizeDelta.x;
+        // scrollRect -> horizontal ? grid -> vertical
+        // scrollRect -> vertical ? grid -> horizontal
+        if (_scrollRect.horizontal)
+        {
+            grid.startAxis = GridLayoutGroup.Axis.Vertical;
+        }
+        else
+        {
+            grid.startAxis = GridLayoutGroup.Axis.Horizontal;
+        }
 
-		if(_scrollRect.horizontal && grid.cellSize.y > contentSize.y)
-		{
-			contentSize.y = grid.cellSize.y;
-		}
-		else if(_scrollRect.vertical && grid.cellSize.x > contentSize.x)
-		{
-			contentSize.x = grid.cellSize.x;
-		}
+        Vector2 contentSize = _rectTransform.sizeDelta;
+        contentSize.y -= _scrollBarHorizontalTransform.sizeDelta.y;
+        contentSize.x -= _scrollBarVerticalTransform.sizeDelta.x;
 
-		_contents.sizeDelta = contentSize;
-		_grid.sizeDelta = contentSize;
+        if (_scrollRect.horizontal && grid.cellSize.y > contentSize.y)
+        {
+            contentSize.y = grid.cellSize.y;
+        }
+        else if (_scrollRect.vertical && grid.cellSize.x > contentSize.x)
+        {
+            contentSize.x = grid.cellSize.x;
+        }
 
-		SetContentsRectSize ();
-	}
+        _contents.sizeDelta = contentSize;
+        _grid.sizeDelta = contentSize;
 
+        SetContentsRectSize();
+    }
+
+    /// <summary>
+    /// ScrollView 의 렉트 사이즈를 결정한다.
+    /// </summary>
 	public void SetContentsRectSize()
 	{
 		if(IsEmpty())
