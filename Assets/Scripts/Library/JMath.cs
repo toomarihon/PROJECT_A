@@ -1,16 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class JMath : MonoBehaviour 
+public class JMath 
 {
-	// Use this for initialization
-	void Start () {
-		
+	private static Random _random;
+
+	static JMath()
+	{
+		_random = new Random ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
 		
+	public static int NextInt(int min, int max)
+	{
+		return _random.Next (min, max);
+	}
+
+	public static float NextFloat(float min, float max)
+	{
+		return min + (max - min) * (float)_random.NextDouble ();
+	}
+
+	public static double NextDouble(double min, double max)
+	{
+		return min + (max - min) * _random.NextDouble ();
+	}
+
+	public static double NextDouble()
+	{
+		return _random.NextDouble ();
 	}
 }

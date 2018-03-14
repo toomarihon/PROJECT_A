@@ -11,15 +11,11 @@ public class CameraHandler : SingletonBase<CameraHandler>
 	}
 	
 	private List<NodeInfo> _nodes;
-	private Vector3 _targetPos;
 	private float _transitionTime;
 	private float _curTime;
 
 	private void MovePosition(Vector3 pos)
 	{
-		if(_targetPos == pos)
-		{
-			
-		}
+
 	}
 }
