@@ -4,6 +4,7 @@ using System;
 
 public class JMath 
 {
+<<<<<<< HEAD
 	private static Random _random;
 
 	static JMath()
@@ -30,4 +31,7 @@ public class JMath
 	{
 		return _random.NextDouble ();
 	}
+=======
+
+>>>>>>> 30aa64c1c04aef431a718fb9bfdab464ed0ca154
 }
