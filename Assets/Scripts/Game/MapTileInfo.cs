@@ -12,10 +12,10 @@ public class MapTileInfo
 		Sand,
 	}
 
-	public const float width = 10;
-	public const float height = 10;
-	public const int columnCount = 10;
-	public const int rowCount = 10;
+	public static float Width = 10;
+	public static float Height = 10;
+	public const int ColumnCount = 100;
+	public const int RowCount = 100;
 
 	private int _xi;
 	private int _yi;
