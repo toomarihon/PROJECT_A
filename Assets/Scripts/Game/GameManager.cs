@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
 	{
-		//
+		//1
 	}
 
     public void CreateMap()
