@@ -62,4 +62,9 @@ public class WorldData
 	public MapTileInfo[,] MapTiles { get; set;}
 	public List<AnimalGroup> AnimalGroup{ get; set;}
 	public List<PlantGroup> PlantGroup{ get; set;}
+
+    public WorldData()
+    {
+        MapTiles = new MapTileInfo[MapTileInfo.ColumnCount, MapTileInfo.RowCount];
+    }
 }

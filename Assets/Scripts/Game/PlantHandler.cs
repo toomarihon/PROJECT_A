@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantHandler : MonoBehaviour 
+public class PlantHandler 
 {
 	public void CreatePlant(List<PlantGroup> plantGroup, MapTileInfo[,] mapTiles)
 	{

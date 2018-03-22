@@ -12,17 +12,15 @@ public class ResourcesPath
 
 public class ResourcesManager : SingletonBase<ResourcesManager> 
 {
+    private bool _isLoaded = false;
 	private Dictionary<string, Sprite> _sprites = new Dictionary<string, Sprite>();
 
 	public void Awake()
 	{
-		DontDestroyOnLoad(this.gameObject);
-	}
+        DontDestroyOnLoad(this.gameObject);
 
-	public void Start()
-	{
-		AddSpriteAll();
-	}
+        AddSpriteAll();
+    }
 
 	public Sprite GetSprite(string spriteName)
 	{
