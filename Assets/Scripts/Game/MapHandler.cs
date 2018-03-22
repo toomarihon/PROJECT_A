@@ -6,10 +6,10 @@ public class MapHandler
 {
 	public void CreateMap(MapTileInfo[,] tileInfoList)
 	{
-		int columnCount = MapTileInfo.ColumnCount;
-		int rowCount = MapTileInfo.RowCount;
+		int columnCount = MapTileInfo.columnCount;
+		int rowCount = MapTileInfo.rowCount;
 
-		//tileInfoList = new MapTileInfo[columnCount, rowCount];
+		tileInfoList = new MapTileInfo[columnCount, rowCount];
 
 		//Create Map First
 		for(int x = 0; x < columnCount; x++)
@@ -73,5 +73,4 @@ public class MapHandler
 			info.Humidity = value;
 		}
 	}
-
 }
