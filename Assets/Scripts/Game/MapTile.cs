@@ -4,31 +4,36 @@ using UnityEngine;
 
 public class MapTile : MonoBehaviour 
 {
-	public int Xi { get; set;}
-	public int Yi { get; set;}
+	private MapTileInfo _tileInfo;
+	private SpriteRenderer _spriteRenderer;
 
-	private MapTileInfo.Type _type;
-    private SpriteRenderer _spriteRenderer;
+	public int Xi {get{return _tileInfo.Xi;}}
+	public int Yi {get{return _tileInfo.Yi;}}
 
-    public void SetTile(int xi, int yi, MapTileInfo.Type type)
+    public void SetTile(MapTileInfo info)
     {
         if(_spriteRenderer == null)
         {
             _spriteRenderer = this.GetComponent<SpriteRenderer>();
         }
 
-        Xi = xi;
-        Yi = yi;
-        _type = type;
+		_tileInfo = info;
 
-        switch (type)
-        {
-            case MapTileInfo.Type.Ground:
-                _spriteRenderer.sprite = ResourcesManager.Instance.GetSprite("Tile_Ground");
-                break;
-            case MapTileInfo.Type.Water:
-                _spriteRenderer.sprite = ResourcesManager.Instance.GetSprite("Tile_Water");
-                break;
-        }
+		switch(info.TileType)
+		{
+		case MapTileInfo.Type.Ground:
+			if(info.Humidity > 0)
+			{
+				_spriteRenderer.color = new Color (1 - info.Humidity * 0.5f, 1 - info.Humidity, 1);
+			}
+			else
+			{
+				_spriteRenderer.color = Color.white;
+			}
+			break;
+		case MapTileInfo.Type.Water:
+			_spriteRenderer.color = Color.blue;
+			break;
+		}
     }
 }

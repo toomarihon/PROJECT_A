@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4009391347631312}
   - component: {fileID: 212824211587482306}
   - component: {fileID: 61138824228795250}
-  - component: {fileID: 114321024775638028}
+  - component: {fileID: 114754030125207836}
   m_Layer: 0
-  m_Name: Tile
+  m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.76, y: 0.76}
+    oldSize: {x: 0.75, y: 0.78}
     newSize: {x: 0.75, y: 0.78}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.78}
   m_EdgeRadius: 0
---- !u!114 &114321024775638028
+--- !u!114 &114754030125207836
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1494127119024108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a7e9ae14e53daa439689283ea1ce019, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a0b25ff17c9149f0a116add9385ddc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212824211587482306
@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300026, guid: e33904bd38f084ec7b100245c607fe8b, type: 3}
+  m_Sprite: {fileID: 21300062, guid: e33904bd38f084ec7b100245c607fe8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43975475, g: 0.4881786, b: 0.56839615, a: 1}
+  m_IndirectSpecularColor: {r: 0.43976706, g: 0.48819244, b: 0.568402, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -424,12 +424,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 836684456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b0bebb8b2d4a8478e9282e0805d21d, type: 3}
+  m_Script: {fileID: 11500000, guid: e6eb6c6043b174a68b747e568ff61138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileGroup: {fileID: 823500220}
-  _tilePrefab: {fileID: 1494127119024108, guid: a443b5717dd19d6439598e03dbb64f9f,
-    type: 2}
 --- !u!1 &857738484
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,8 +483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1cdb454b50aa2b42840cd318eac12d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabList:
-  - {fileID: 1021871235533450, guid: 80dc6a75fc9fb44dab02399965f9356e, type: 2}
 --- !u!114 &857738488
 MonoBehaviour:
   m_ObjectHideFlags: 0

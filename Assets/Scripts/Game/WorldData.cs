@@ -31,11 +31,13 @@ public class AnimalGroup
 
 public class PlantGroup
 {
+	public static int GroupId = 1;
+
 	private int _gid;
 	private float _regenRange;
 	private List<Plant> _plantList;
 
-	public void Init(int id, float range)
+	public void Init(float range)
 	{
 		if(_plantList == null)
 		{
@@ -46,7 +48,7 @@ public class PlantGroup
 			_plantList.Clear ();
 		}
 
-		_gid = id;
+		_gid = GroupId++;
 		_regenRange = range;
 	}
 
@@ -59,12 +61,14 @@ public class PlantGroup
 	
 public class WorldData
 {
-	public MapTileInfo[,] MapTiles { get; set;}
-	public List<AnimalGroup> AnimalGroup{ get; set;}
-	public List<PlantGroup> PlantGroup{ get; set;}
+	public MapTileInfo[,] MapTiles { get; private set;}
+	public List<AnimalGroup> AnimalGroup{ get; private set;}
+	public List<PlantGroup> PlantGroup{ get; private set;}
 
     public WorldData()
     {
         MapTiles = new MapTileInfo[MapTileInfo.ColumnCount, MapTileInfo.RowCount];
+		PlantGroup = new List<PlantGroup> ();
+		AnimalGroup = new List<AnimalGroup> ();
     }
 }

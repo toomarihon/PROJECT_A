@@ -19,6 +19,8 @@ public class MapTileInfo
 
 	private int _xi;
 	private int _yi;
+	public int Xi {get{return _xi;}}
+	public int Yi {get{return _yi;}}
 
 	public int F { get; set;}
 	public int G { get; set;}

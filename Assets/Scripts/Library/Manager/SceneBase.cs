@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneBase : MonoBehaviour {
-
+public class SceneBase : MonoBehaviour 
+{
 	// Use this for initialization
 	void Start () {
 		

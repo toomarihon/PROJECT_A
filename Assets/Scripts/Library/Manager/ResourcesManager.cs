@@ -5,6 +5,7 @@ using UnityEngine;
 public class ResourcesPath
 {
 	public static string SpriteFolderPath = "Sprites/";
+	public static string WorldPrefabFolerPath = "Prefabs/World";
 
 	public static string CSV_FolderFath = "CSV/";
 	public static string CSV_Dialog = "Dialog";
@@ -12,14 +13,18 @@ public class ResourcesPath
 
 public class ResourcesManager : SingletonBase<ResourcesManager> 
 {
-    private bool _isLoaded = false;
 	private Dictionary<string, Sprite> _sprites = new Dictionary<string, Sprite>();
+	private Dictionary<string, GameObject> _prefabs = new Dictionary<string, GameObject>();
+	private ObjectPool _objectPool = new ObjectPool ();
 
 	public void Awake()
 	{
         DontDestroyOnLoad(this.gameObject);
 
         AddSpriteAll();
+		AddPrefabAll ();
+
+		_objectPool.Init (_prefabs);
     }
 
 	public Sprite GetSprite(string spriteName)
@@ -33,6 +38,11 @@ public class ResourcesManager : SingletonBase<ResourcesManager>
 		return sprite;
 	}
 
+	public GameObject GetObject(string name)
+	{
+		return _objectPool.GetObject(name);
+	}
+
 	public void AddSpriteAll()
 	{
 		Sprite[] sprites = Resources.LoadAll<Sprite>(ResourcesPath.SpriteFolderPath);
@@ -40,6 +50,21 @@ public class ResourcesManager : SingletonBase<ResourcesManager>
 		for(int i = 0; i < sprites.Length; i++)
 		{
 			_sprites.Add(sprites[i].name, sprites[i]);
+		}
+	}
+
+	public void AddPrefabAll()
+	{
+		AddPrefab (ResourcesPath.WorldPrefabFolerPath);
+	}
+
+	public void AddPrefab(string folerPath)
+	{
+		GameObject[] obj = Resources.LoadAll<GameObject> (folerPath);
+
+		for(int i = 0; i < obj.Length; i++)
+		{
+			_prefabs.Add (obj [i].name, obj [i]);
 		}
 	}
 }
