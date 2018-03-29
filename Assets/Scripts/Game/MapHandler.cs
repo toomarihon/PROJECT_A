@@ -19,7 +19,7 @@ public class MapHandler
 				MapTileInfo info = new MapTileInfo ();
 
 				//this is for temp -> almost ground
-				MapTileInfo.Type type = JMath.NextInt (0, 75) != 0 ? MapTileInfo.Type.Ground : MapTileInfo.Type.Water;
+				MapTileInfo.Type type = JUtil.NextInt (0, 75) != 0 ? MapTileInfo.Type.Ground : MapTileInfo.Type.Water;
 				info.Init (x, y, type);
 				tileInfoList [x,y] = info;
 			}

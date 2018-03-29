@@ -19,6 +19,8 @@ public class MapTileInfo
 
 	private int _xi;
 	private int _yi;
+	private BuildableObject _buildableObject;
+
 	public int Xi {get{return _xi;}}
 	public int Yi {get{return _yi;}}
 
@@ -33,6 +35,8 @@ public class MapTileInfo
 	{
 		_xi = xIdx;
 		_yi = yIdx;
+		_buildableObject = null;
+
 		TileType = t;
 		Temperature = 0;
 		Humidity = 0;
@@ -40,5 +44,20 @@ public class MapTileInfo
 		F = 0;
 		G = 0;
 		H = 0;
+	}
+
+	public void SetBuildableObject(BuildableObject obj)
+	{
+		_buildableObject = obj;
+	}
+
+	public T GetBuildableObject<T>() where T : BuildableObject
+	{
+		return _buildableObject as T;
+	}
+
+	public void ClearBuildingObject()
+	{
+		_buildableObject = null;
 	}
 }

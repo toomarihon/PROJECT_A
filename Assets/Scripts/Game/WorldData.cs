@@ -31,13 +31,15 @@ public class AnimalGroup
 
 public class PlantGroup
 {
-	public static int GroupId = 1;
+	private static int GroupId = 1;
 
 	private int _gid;
-	private float _regenRange;
+	private int _groupRange;			//range releate to tile idx. 
 	private List<Plant> _plantList;
 
-	public void Init(float range)
+	public int Gid {get {return _gid;}}
+
+	public void Init(int range)
 	{
 		if(_plantList == null)
 		{
@@ -49,14 +51,13 @@ public class PlantGroup
 		}
 
 		_gid = GroupId++;
-		_regenRange = range;
+		_groupRange = range;
 	}
 
 	public void AddPlant(Plant plant)
 	{
 		_plantList.Add(plant);
 	}
-		
 }
 	
 public class WorldData

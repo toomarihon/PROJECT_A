@@ -31,6 +31,7 @@ public class MapTile : MonoBehaviour
 				_spriteRenderer.color = Color.white;
 			}
 			break;
+
 		case MapTileInfo.Type.Water:
 			_spriteRenderer.color = Color.blue;
 			break;
