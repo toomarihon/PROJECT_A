@@ -16,15 +16,13 @@ public class GameManager : MonoBehaviour
 		_plantHandler = new PlantHandler ();
 		_tileHandler = new MapHandler ();
         _animalHandler = new AnimalHandler();
-
     }
 
     public void Start()
-    {
-        //init world
-        _tileHandler.CreateMapInfo(_worldData.MapTiles);
-		_tileHandler.CreateMap(_worldData.MapTiles, this.gameObject);
-		_plantHandler.CreatePlant(_worldData.PlantGroup, _worldData.MapTiles);
-		_animalHandler.CreateMonsters (_worldData.AnimalGroup, _worldData.MapTiles);
-    }
+	{
+		//init world
+		_tileHandler.CreateMapInfo (_worldData.MapTiles);
+		_tileHandler.CreateMap (_worldData.MapTiles, this.gameObject);
+		_plantHandler.CreatePlant (_worldData.PlantGroup, _worldData.MapTiles);
+	}
 }

@@ -7,6 +7,9 @@ public class MapTile : MonoBehaviour
 	private MapTileInfo _tileInfo;
 	private SpriteRenderer _spriteRenderer;
 
+	//JNE this is for editor display
+	public float humidity;
+
 	public int Xi {get{return _tileInfo.Xi;}}
 	public int Yi {get{return _tileInfo.Yi;}}
 
@@ -36,5 +39,12 @@ public class MapTile : MonoBehaviour
 			_spriteRenderer.color = Color.blue;
 			break;
 		}
+
+		humidity = info.Humidity;
     }
+
+	public static Vector3 IndexToPosition(int xi, int yi)
+	{
+		return new Vector3 (MapTileInfo.Width * xi, MapTileInfo.Height * yi, 0);
+	}
 }
