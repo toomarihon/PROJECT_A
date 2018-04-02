@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//PanelStackManager
 public class PanelStackManager : SingletonBase<PanelStackManager> 
 {
 	public enum PopupName
